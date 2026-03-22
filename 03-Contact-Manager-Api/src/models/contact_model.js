@@ -1,13 +1,27 @@
-const Contact = require('../models/contact_model');
+const mongoose = require("mongoose");
 
-exports.createContact = async (req, res) => {
-  try {
-    const contact = await Contact.create(req.body);
-    return res.status(201).json(contact);
-  } catch (error) {
-    console.error("ERROR IN CREATE CONTACT:", error);
-    return res.status(500).json(error.message);
-  }
-};
+const contactSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    minlength: 3,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    match: /.+\@.+\..+/,
+  },
+  phone: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
+module.exports = mongoose.model("Contact", contactSchema);
 
