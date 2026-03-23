@@ -15,8 +15,7 @@ exports.getAllContacts = async (req, res) => {
     let query = {};
 
     if (req.query.search) {
-      query.name = { $regex: req.query.search, $options: "i" };
-    }
+     }
 
     const contacts = await Contact.find(query);
 
