@@ -12,7 +12,6 @@ app.use(express.json());
 app.use('/api/weather', weatherRoute);
 
 app.get('/',(req,res)=>{
-    console.log('API IS RUNNING SUCCESSFULLY');
     res.send('API IS RUNNING SUCCESSFULLY');
 });
 

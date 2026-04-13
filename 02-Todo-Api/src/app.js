@@ -8,7 +8,7 @@ connectDB();
 
 const app = express();
 
-app.use(express.json());4
+app.use(express.json());
 
 app.use('/api/todos',todoRoutes);
 

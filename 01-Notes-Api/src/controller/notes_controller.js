@@ -23,7 +23,7 @@ exports.getAllNotes = async (req, res) => {
 exports.getNoteById = async (req, res) => {
   try {
     const notes = await Note.findById(req.params.id);
-    if (!NavigationDestination) {
+    if (!notes) {
       return res.status(404).json("Note not found");
     }
     return res.status(200).json(notes);

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "logger": "^0.0.1",
+    "mongoose": "^9.4.1"
+  }
+}
